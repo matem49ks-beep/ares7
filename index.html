@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARES-7</title>
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="learning.css">
+    <!-- UI styles -->
+    <style>
+      #rooms > button, #rooms button:not(.nav-btn) {
+        display: flex; align-items: center; gap: 10px; width: 100%;
+        background: #182234; color: #cbd5e1; border: 1px solid #26334d;
+        padding: 12px 14px; margin-bottom: 10px; border-radius: 10px;
+        font: 500 14px 'Segoe UI', system-ui, sans-serif;
+        text-align: left; cursor: pointer; transition: all .2s ease;
+      }
+      #rooms > button:hover, #rooms button:not(.nav-btn):hover {
+        background: #1f2c42; border-color: #3b4d6b;
+      }
+      #rooms button.active, #rooms button[aria-current="page"] {
+        background: linear-gradient(90deg,rgba(234,88,12,.22),rgba(24,34,52,.9));
+        border-color: #ea580c; color: #fff; font-weight: 600;
+      }
+      #actions button:not(.action-btn), #actions .action-btn {
+        background: #1e293b; color: #f8fafc; border: 1px solid #334155;
+        padding: 12px 18px; border-radius: 8px;
+        font: 500 14px 'Segoe UI', system-ui, sans-serif;
+        cursor: pointer; transition: all .2s ease; margin: 0 8px 10px 0;
+      }
+      #actions button:hover { background: #283548; border-color: #f97316; }
+      #actions button:disabled { opacity: .5; cursor: not-allowed; }
+      #rooms, #actions, #meters, #inventory, #objectives { color: #cbd5e1; }
+      #meters > div, #inventory > div, #objectives > div {
+        margin-bottom: 10px; line-height: 1.5;
+      }
+      #meters .stat-row { display: flex; justify-content: space-between; }
+      #meters .progress-container { background: #1e293b; border-radius: 6px; height: 7px; overflow: hidden; }
+      #meters .progress-bar { height: 100%; background: #34d399; }
+      #meters .progress-bar.warning { background: #fbbf24; }
+      #meters .progress-bar.danger { background: #f87171; }
+      @media (max-width: 1000px) {
+        .container.layout { grid-template-columns: minmax(190px, 1fr) minmax(0, 2fr); }
+        .status-panel { grid-column: 1 / -1; }
+      }
+      @media (max-width: 650px) {
+        body { padding: 14px; }
+        .container.layout { grid-template-columns: minmax(0, 1fr); }
+        .status-panel { grid-column: auto; }
+        .top-bar { flex-wrap: wrap; gap: 12px; }
+      }
+    </style>
+<link rel="stylesheet" href="station-map.css">
+<link rel="stylesheet" href="minigames/minigames.css">
+<link rel="stylesheet" href="adventure.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+    <div>
+        <h1>🚀 ARES-7 <span>MARTIAN STATION</span></h1>
+        <p class="subtitle">Crew Management and Survival System</p>
+    </div>
+
+    <div class="shift-badge" id="turnInfo">
+        Day 1 / 20
+    </div>
+</header>
+
+<aside id="emergency-notice" class="emergency-notice" role="alert" hidden>
+    <span id="emergency-notice-text"></span>
+    <button id="emergency-notice-open" type="button">Go to Emergency →</button>
+</aside>
+
+<main class="container layout">
+
+    <aside class="sidebar">
+
+        <h3>STATION SECTORS</h3>
+
+        <button id="open-space-map" class="nav-btn" type="button">
+            🌌 Space Map
+        </button>
+
+        <div id="rooms"></div>
+
+    </aside>
+
+    <section class="main-screen">
+
+        <div class="module-banner">
+            <div id="roomTag"></div>
+            <div id="weatherTag"></div>
+            <div id="supplyTag"></div>
+
+            <h2 id="sceneTitle">Command Center</h2>
+
+            <p id="sceneSub"></p>
+        </div>
+
+        <p class="description" id="desc"></p>
+
+        <div id="eventBox"></div>
+
+        <section id="protection-section">
+            <div id="protection-root"></div>
+        </section>
+
+        <h4>AVAILABLE ACTIONS</h4>
+        <div id="actions"></div>
+
+        <h4>EVENT LOG</h4>
+        <div class="event-log" id="log"></div>
+
+    </section>
+
+    <aside class="status-panel">
+
+        <h3>SYSTEM STATUS</h3>
+        <div id="meters"></div>
+
+        <h3>SUPPLIES</h3>
+        <div id="inventory"></div>
+
+        <h3>MISSION OBJECTIVES</h3>
+        <div id="objectives"></div>
+
+    </aside>
+
+</main>
+
+<div id="space-map-root" style="display:none"></div>
+<div id="mission-root"></div>
+
+<div class="overlay" id="overlay">
+    <div class="modal" id="modal"></div>
+</div>
+
+<script src="scoring.js" defer></script>
+<script src="farming.js" defer></script>
+<script src="life.js" defer></script>
+<script src="protection.js" defer></script>
+<script src="interface.js" defer></script>
+<script src="game.js" defer></script>
+<script src="space-map.js" defer></script>
+<script src="mission.js" defer></script>
+
+<script src="learning.js" defer></script>
+<script src="station-map.js" defer></script>
+<script src="minigames/models.js" defer></script>
+<script src="minigames/runner.js" defer></script>
+<script src="minigames/games.js" defer></script>
+<script src="minigames/integration.js" defer></script>
+<script src="adventure-core.js" defer></script>
+<script src="adventure.js" defer></script>
+</body>
+</html>

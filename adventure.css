@@ -1,0 +1,26 @@
+.scenario-picker{padding:18px;margin:20px 0 5px;background:#112335;border:1px solid #35516a;border-radius:12px}
+.scenario-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.scenario-options button{padding:13px;border:1px solid #3c566a;border-radius:8px;background:#172d41;color:#c7dce8;text-align:left;cursor:pointer;font:inherit}
+.scenario-options button[aria-pressed=true]{border-color:#edbd82;background:#42382e;color:#fff0db}
+.scenario-options small{display:block;font:9px monospace;letter-spacing:.1em;margin-bottom:6px;color:#91c2c8}
+.scenario-options strong{font-size:13px;line-height:1.5}
+.scenario-picker p,.scenario-picker label{font-size:13px;line-height:1.7;color:#bfd0dc}.scenario-picker input{accent-color:#e5b781;margin-right:8px;width:16px;height:16px}
+.deck-spine.flowing{border-color:#4f9f9d;box-shadow:0 0 18px #5fd2d42b;animation:station-flow 3s ease-in-out infinite}
+.deck-room.status-critical{border-color:#ef8a76!important;animation:station-alert 2s ease-in-out infinite}.deck-room.status-critical small{color:#ffb7a8!important}
+.deck-room.status-degraded{border-color:#dca75d!important}.deck-room.status-degraded small{color:#f4c983!important}
+.deck-room.status-paused{border-style:dashed!important;opacity:.8}.deck-room.status-offline .deck-icon{color:#7f8c9e}
+.deck-room.status-ready:after{content:'';position:absolute;top:12px;right:12px;width:7px;height:7px;background:#8de1c1;border-radius:50%;box-shadow:0 0 10px #75d9c1}
+.live-readings{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}.live-readings span{background:#132a3c;padding:10px 5px;border:1px solid #355064;border-radius:7px;font:9px monospace;text-align:center;color:#91b7c5}.live-readings b{display:block;font-size:22px;color:#bce7df;margin-top:7px}
+.scenario-forecast{padding:12px;border:1px solid #3a4e61;border-radius:8px;margin-top:15px;background:#142333}.scenario-forecast b{color:#c5a77f;font-size:11px}.scenario-forecast p{font-size:11px;margin:7px 0}
+#adventure-panel{margin:0 0 18px}#adventure-panel[hidden]{display:none}
+.tutorial-card{padding:20px;border:1px solid #528f95;border-left:4px solid #87d7cf;border-radius:12px;background:linear-gradient(125deg,#193c46,#142638);margin-bottom:14px}
+.tutorial-card h3{margin:10px 0;color:#e5f5f3;font-size:20px}.tutorial-card p{font-size:13px;color:#bfd7de;line-height:1.7;margin:10px 0}
+.tutorial-card button,.adventure-dialog button{padding:11px 14px;margin:5px 7px 5px 0;background:#dcb487;color:#281f17;border:1px solid #edc99d;border-radius:7px;font:600 12px 'Segoe UI',sans-serif;cursor:pointer}
+.tutorial-card .subtle{display:block;background:transparent;border-color:#5c7786;color:#bdd2dc;font-weight:400}
+.adventure-status{display:flex;gap:7px;flex-wrap:wrap}.adventure-status span{font:10px monospace;border:1px solid #3a5265;background:#182d3f;padding:7px 9px;border-radius:5px;color:#b0ccda}.adventure-status span:first-child{color:#e4c69b}
+.temporary-warning{font-size:12px;padding:12px;color:#f0c08a;line-height:1.6;background:#453528;border-left:3px solid #dcad6f;margin-top:10px}
+.adventure-dialog{width:min(620px,94vw);margin:auto;max-height:90vh;overflow:auto;background:#102135;color:#deebf4;border:1px solid #4d6b80;border-radius:14px;padding:26px;font-family:'Segoe UI',sans-serif}.adventure-dialog::backdrop{background:#030914dd;backdrop-filter:blur(5px)}.adventure-dialog h2{margin:15px 0;font-size:25px}.adventure-dialog p{font-size:14px;line-height:1.8;margin:15px 0}.decision-effects{padding:15px;background:#21384a;border-left:3px solid #e9ba80;font-size:13px;line-height:1.8}#decision-cancel{background:#20364a;color:#c9dce7;border-color:#4d697e}
+@keyframes station-alert{50%{box-shadow:inset 0 0 0 3px #ba675b33,0 0 17px #dd6a5833}}@keyframes station-flow{50%{opacity:.8}}
+@media(prefers-reduced-motion:reduce){.deck-spine.flowing,.deck-room.status-critical{animation:none}}
+@media(max-width:650px){.scenario-options{grid-template-columns:repeat(2,minmax(0,1fr))}.scenario-picker{padding:12px}.tutorial-card{padding:15px}.tutorial-card h3{font-size:18px}.adventure-dialog{padding:18px}}
+.adventure-consequence{padding:12px 15px;margin:12px 0;border-left:3px solid #72bfb7;background:#17303c;color:#c5e2df;font-size:12px;line-height:1.7}
